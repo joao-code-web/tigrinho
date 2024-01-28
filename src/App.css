@@ -1,0 +1,109 @@
+body {
+  background-color: #0f172a;
+  background-image: url("./Images/jogar-fortune-tiger.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card {
+  width: 400px;
+  padding: 1em;
+  color: white;
+  margin: auto;
+}
+
+.card .dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.card .dashboard .dashTotal {
+  width: 100%;
+
+  text-align: center;
+}
+
+.card .dashboard .dashPositive {
+  width: 50%;
+  color: green;
+  text-align: center;
+}
+
+.card .dashboard .dashPositive h1 span,
+.card .dashboard .dashNegative h1 span {
+  color: white;
+}
+
+.card .dashboard .dashNegative {
+  width: 50%;
+  color: red;
+  text-align: center;
+}
+
+.card .alltransac {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card .alltransac .transac {
+  width: 100%;
+  display: flex;
+  font-size: 0.7em;
+  align-items: center;
+  padding: 0em 2em;
+  margin-top: 1em;
+  justify-content: space-between;
+  background-color: #0f172a;
+  border-radius: 2em;
+}
+
+.card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.card form label {
+  font-size: 1.4em;
+}
+
+.card form input {
+  padding: 0.5em 0.7em;
+  margin: 0.8em 0em;
+  border-radius: 20px;
+  font-size: 1.3em;
+}
+
+.card form button {
+  width: 160px;
+  margin: 1em auto;
+  padding: 0.7em 0.4em;
+  border-radius: 20px;
+}
+
+.card .alltransac .delete {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .alltransac .delete > h1 {
+  font-size: 3em;
+}
+
+.delete>button {
+  border-radius: 10px;
+  padding: 0.6em;
+  border: none;
+  width: 70px;
+  font-size: 3em;
+  color: white;
+  margin-top: 0.2em;
+  background-color: transparent;
+}
