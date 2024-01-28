@@ -6,7 +6,7 @@ interface AddTransactionProps {
     value: number;
 }
 
-interface transactionsProps {
+interface TransactionsProps {
     name: string;
     value: number;
     id: string;
@@ -15,20 +15,26 @@ interface transactionsProps {
 }
 
 export default function UseAddTransaction() {
-
-    const [transactions, setTransactions] = useState<transactionsProps[]>([]);
+    const [transactions, setTransactions] = useState<TransactionsProps[]>([]);
 
     async function addTransaction({ name, value }: AddTransactionProps) {
         try {
-            const data = { name, value }; // Objeto contendo os dados da pessoa
+            const data = { name, value };
             const response = await axios.post("http://localhost:3000", data);
-            setTransactions(allTransactions => [...allTransactions, response.data])
+
+            // Certifique-se de que a resposta contém os dados esperados
+            const newTransaction: TransactionsProps = response.data;
+
+            setTransactions(prevTransactions => [...prevTransactions, newTransaction]);
         } catch (error) {
-            console.error("Erro ao adicionar pessoa:", error);
+            console.error("Erro ao adicionar transação:", error);
+            // Trate o erro de forma adequada, se necessário
         }
     }
 
     return {
-        addTransaction, transactions, setTransactions
+        addTransaction,
+        transactions,
+        setTransactions,
     };
 }
